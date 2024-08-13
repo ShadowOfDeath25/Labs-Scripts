@@ -42,7 +42,7 @@ def cookies_bruteforcing(url, session, password_wordlist="/home/kali/passwords.t
 
 
 def main():
-    if len(sys.argv) < 2 and len(sys.argv) > 3:
+    if 2 > len(sys.argv) > 3:
         print("[*] Wrong tool Usage!")
         print(f"[*] Usage {sys.argv[0]} <url>  <password wordlist>")
         print(f"[*] Example {sys.argv[0]} https://example.com  passwords.txt")
